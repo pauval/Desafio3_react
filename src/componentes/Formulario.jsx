@@ -21,19 +21,16 @@ const Formulario = ({ onAgregar, setAlerta }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validar que la edad sea un número positivo
     const edad = parseInt(nuevoColaborador.edad);
     if (isNaN(edad) || edad <= 0) {
       setAlerta({ mensaje: "La edad debe ser un número positivo.", tipo: "danger" });
       return;
     }
-    // Validar que el teléfono sea un número positivo
     const telefono = parseInt(nuevoColaborador.telefono);
     if (isNaN(telefono) || telefono <= 0) {
       setAlerta({ mensaje: "El teléfono debe ser un número positivo.", tipo: "danger" });
       return;
     }
-    // Resto del código para agregar el colaborador si las validaciones pasan
     if (
       !nuevoColaborador.nombre ||
       !nuevoColaborador.correo ||
