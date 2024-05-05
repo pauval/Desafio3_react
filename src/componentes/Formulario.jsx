@@ -23,8 +23,8 @@ const Formulario = ({ onAgregar, setAlerta }) => {
     e.preventDefault();
     // Validar que la edad sea un número positivo
     const edad = parseInt(nuevoColaborador.edad);
-    if (isNaN(edad) || edad <= 0) {
-      setAlerta({ mensaje: "La edad debe ser un número positivo.", tipo: "danger" });
+    if (isNaN(edad) || edad <= 0 || edad > 100) {
+      setAlerta({ mensaje: "La edad debe ser un número positivo y menor que 100.", tipo: "danger" });
       return;
     }
     // Validar que el teléfono sea un número positivo
